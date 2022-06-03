@@ -40,9 +40,9 @@ class UsersRepository implements IUsersRepository {
   }
 
   turnAdmin(receivedUser: User): void {
-    const userAdm = new User()
+    const userAdm = receivedUser
     Object.assign(userAdm, {
-      userAdmin: receivedUser.userAdmin
+      userAdmin: true
     })
     this.users.push(userAdm)
 
